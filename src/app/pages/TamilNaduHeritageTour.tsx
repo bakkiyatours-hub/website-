@@ -1,4 +1,5 @@
 import { Star } from 'lucide-react';
+import breadcumbsVideo from '../../assets/breadcumbsvideo.mp4';
 
 const itinerary = [
   {
@@ -74,8 +75,13 @@ const facilities = ['Air Conditioning', 'Free WiFi', 'Restaurant', 'Parking', '2
 export function TamilNaduHeritageTour() {
   return (
     <main>
-      <section className="bg-gradient-to-r from-purple-900 to-blue-900 text-white py-16">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="bg-gradient-to-r from-purple-900 to-blue-900 text-white py-16 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-30">
+          <video autoPlay loop muted playsInline preload="metadata" className="w-full h-full object-cover">
+            <source src={breadcumbsVideo} type="video/mp4" />
+          </video>
+        </div>
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <p className="text-orange-300 text-sm mb-2">Heritage Tour - 6 Days Package</p>
           <h1 className="text-4xl md:text-5xl mb-4">UNESCO World Heritage Sites of Tamil Nadu</h1>
           <p className="text-lg md:text-xl text-purple-100 mb-6">

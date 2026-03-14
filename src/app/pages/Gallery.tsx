@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { X } from 'lucide-react';
+import breadcumbsVideo from '../../assets/breadcumbsvideo.mp4';
 
 const tajMahalImage =
   'https://images.unsplash.com/photo-1623811852177-611cda0b372f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxiZWF1dGlmdWwlMjB0YWolMjBtYWhhbCUyMGluZGlhJTIwdHJhdmVsfGVufDF8fHx8MTc3MjQ1OTg0NHww&ixlib=rb-4.1.0&q=80&w=1080';
@@ -62,8 +63,13 @@ export function Gallery() {
   return (
     <div>
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-purple-900 to-blue-900 text-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center" data-reveal>
+      <section className="bg-gradient-to-r from-purple-900 to-blue-900 text-white py-16 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-30">
+          <video autoPlay loop muted playsInline preload="metadata" className="w-full h-full object-cover">
+            <source src={breadcumbsVideo} type="video/mp4" />
+          </video>
+        </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10" data-reveal>
           <h1 className="text-5xl mb-4">Photo Gallery</h1>
           <p className="text-xl">Moments captured from our unforgettable journeys</p>
         </div>

@@ -1,4 +1,5 @@
 import { Star, Languages, Award, MapPin } from 'lucide-react';
+import breadcumbsVideo from '../../assets/breadcumbsvideo.mp4';
 
 const guideImage =
   'https://images.unsplash.com/photo-1659100939687-a7c10b4d5841?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjB0b3VyJTIwZ3VpZGV8ZW58MXx8fHwxNzcyNDQ0MTgxfDA&ixlib=rb-4.1.0&q=80&w=1080';
@@ -92,7 +93,17 @@ export function Team() {
       {/* Hero Section */}
       <section className="relative h-96 flex items-center justify-center">
         <div className="absolute inset-0">
-          <img src={guideImage} alt="Our Team" className="w-full h-full object-cover" data-parallax="0.12" />
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="metadata"
+            className="w-full h-full object-cover"
+            data-parallax="0.12"
+          >
+            <source src={breadcumbsVideo} type="video/mp4" />
+          </video>
           <div className="absolute inset-0 bg-gradient-to-r from-purple-900/80 to-blue-900/80"></div>
         </div>
         <div className="relative z-10 text-center text-white px-4" data-reveal>

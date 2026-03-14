@@ -1,5 +1,6 @@
 import { Mail, Phone, MapPin, Clock, Facebook, Instagram, Twitter, MessageCircle } from 'lucide-react';
 import { ContactForm } from '../components/ContactForm';
+import breadcumbsVideo from '../../assets/breadcumbsvideo.mp4';
 
 export function Contact() {
   const phoneNumberE164 = '+919626488887';
@@ -8,8 +9,13 @@ export function Contact() {
   return (
     <div>
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-purple-900 to-blue-900 text-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="bg-gradient-to-r from-purple-900 to-blue-900 text-white py-16 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-30">
+          <video autoPlay loop muted playsInline preload="metadata" className="w-full h-full object-cover">
+            <source src={breadcumbsVideo} type="video/mp4" />
+          </video>
+        </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <h1 className="text-5xl mb-4">Get In Touch</h1>
           <p className="text-xl">We're here to help you plan your perfect journey</p>
         </div>

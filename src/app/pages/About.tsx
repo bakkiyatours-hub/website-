@@ -1,4 +1,5 @@
 import { Award, Users, Globe, Shield, Heart, TrendingUp } from 'lucide-react';
+import breadcumbsVideo from '../../assets/breadcumbsvideo.mp4';
 
 const aboutImage =
   'https://images.unsplash.com/photo-1768410318398-fcd1dc09dfc8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0cmF2ZWwlMjB0b3VyJTIwZ3JvdXAlMjBhZHZlbnR1cmV8ZW58MXx8fHwxNzcyNDU5ODQ2fDA&ixlib=rb-4.1.0&q=80&w=1080';
@@ -9,7 +10,9 @@ export function About() {
       {/* Hero Section */}
       <section className="relative h-96 flex items-center justify-center">
         <div className="absolute inset-0">
-          <img src={aboutImage} alt="About Us" className="w-full h-full object-cover" />
+          <video autoPlay loop muted playsInline preload="metadata" className="w-full h-full object-cover">
+            <source src={breadcumbsVideo} type="video/mp4" />
+          </video>
           <div className="absolute inset-0 bg-gradient-to-r from-purple-900/80 to-blue-900/80"></div>
         </div>
         <div className="relative z-10 text-center text-white px-4">

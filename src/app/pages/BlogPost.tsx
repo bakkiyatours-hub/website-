@@ -1,5 +1,6 @@
 import { Link } from 'react-router';
 import { Calendar, User, ArrowLeft, Share2, Facebook, Twitter, Linkedin } from 'lucide-react';
+import breadcumbsVideo from '../../assets/breadcumbsvideo.mp4';
 
 const tajMahalImage =
   'https://images.unsplash.com/photo-1623811852177-611cda0b372f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxiZWF1dGlmdWwlMjB0YWolMjBtYWhhbCUyMGluZGlhJTIwdHJhdmVsfGVufDF8fHx8MTc3MjQ1OTg0NHww&ixlib=rb-4.1.0&q=80&w=1080';
@@ -36,7 +37,9 @@ export function BlogPost() {
 
       {/* Hero Image */}
       <section className="relative h-[500px]">
-        <img src={tajMahalImage} alt="Blog Post" className="w-full h-full object-cover" />
+        <video autoPlay loop muted playsInline preload="metadata" className="w-full h-full object-cover">
+          <source src={breadcumbsVideo} type="video/mp4" />
+        </video>
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
       </section>
 
