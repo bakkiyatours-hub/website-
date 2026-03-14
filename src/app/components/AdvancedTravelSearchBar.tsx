@@ -5,6 +5,7 @@ import type { StylesConfig } from 'react-select';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import { Search, SlidersHorizontal, Minus, Plus, Users, Calendar as CalendarIcon, Star } from 'lucide-react';
+import { allPackages } from '../data/packages';
 
 type Travelers = { adults: number; children: number; rooms: number };
 type TourType = 'Temple Tour' | 'Adventure Tour' | 'Family Tour' | 'Honeymoon Tour';
@@ -29,14 +30,6 @@ type Props = {
   initialTourPlace?: string;
 };
 
-const DESTINATIONS: Option[] = [
-  { label: 'Madurai', value: 'Madurai' },
-  { label: 'Rameshwaram', value: 'Rameshwaram' },
-  { label: 'Kerala', value: 'Kerala' },
-  { label: 'Kanyakumari', value: 'Kanyakumari' },
-  { label: 'Sri Lanka', value: 'Sri Lanka' },
-];
-
 const TOUR_TYPES: TourType[] = ['Temple Tour', 'Adventure Tour', 'Family Tour', 'Honeymoon Tour'];
 
 const easeOut = [0.22, 1, 0.36, 1] as const;
@@ -51,6 +44,13 @@ function toIsoOrNull(d: Date | null) {
 
 function formatDateShort(d: Date) {
   return d.toLocaleDateString(undefined, { day: '2-digit', month: 'short' });
+}
+
+function splitPlaces(value: string) {
+  return value
+    .split(',')
+    .map((s) => s.trim())
+    .filter(Boolean);
 }
 
 export function AdvancedTravelSearchBar({
@@ -79,6 +79,28 @@ export function AdvancedTravelSearchBar({
 
   const [isMobile, setIsMobile] = useState(false);
 
+  const destinationOptions = useMemo(() => {
+    const set = new Set<string>();
+    for (const pkg of allPackages) {
+      set.add(pkg.location);
+      for (const place of splitPlaces(pkg.destination)) set.add(place);
+    }
+    return Array.from(set)
+      .filter(Boolean)
+      .sort((a, b) => a.localeCompare(b))
+      .map((v) => ({ label: v, value: v }));
+  }, []);
+
+  const tourPlaceOptions = useMemo(() => {
+    const set = new Set<string>();
+    for (const pkg of allPackages) {
+      for (const place of splitPlaces(pkg.destination)) set.add(place);
+    }
+    return Array.from(set)
+      .filter(Boolean)
+      .sort((a, b) => a.localeCompare(b));
+  }, []);
+
   useEffect(() => {
     const mq = window.matchMedia?.('(max-width: 640px)');
     if (!mq) return;
@@ -102,9 +124,28 @@ export function AdvancedTravelSearchBar({
 
   const loadDestinationOptions = useCallback(async (inputValue: string) => {
     const q = inputValue.trim().toLowerCase();
-    if (!q) return DESTINATIONS;
-    return DESTINATIONS.filter((o) => o.value.toLowerCase().includes(q)).slice(0, 8);
-  }, []);
+    if (!q) return destinationOptions;
+    return destinationOptions.filter((o) => o.value.toLowerCase().includes(q)).slice(0, 12);
+  }, [destinationOptions]);
+
+  const filteredTourPlaceOptions = useMemo(() => {
+    const d = destination?.value?.trim().toLowerCase();
+    if (!d) return tourPlaceOptions;
+
+    const set = new Set<string>();
+    for (const pkg of allPackages) {
+      const matches =
+        pkg.location.toLowerCase().includes(d) ||
+        pkg.destination.toLowerCase().includes(d) ||
+        pkg.title.toLowerCase().includes(d);
+      if (!matches) continue;
+      for (const place of splitPlaces(pkg.destination)) set.add(place);
+    }
+
+    return Array.from(set)
+      .filter(Boolean)
+      .sort((a, b) => a.localeCompare(b));
+  }, [destination, tourPlaceOptions]);
 
   const dateLabel = useMemo(() => {
     if (!startDate && !endDate) return 'Travel Dates';
@@ -220,7 +261,7 @@ export function AdvancedTravelSearchBar({
           <div className="px-1">
             <AsyncSelect<Option, false>
               cacheOptions
-              defaultOptions
+              defaultOptions={destinationOptions}
               loadOptions={loadDestinationOptions}
               value={destination}
               onChange={(opt) => setDestination(opt)}
@@ -234,6 +275,7 @@ export function AdvancedTravelSearchBar({
           <input
             type="text"
             placeholder="Tour Place"
+            list="bk-tour-places"
             className="px-4 py-3 rounded-full text-gray-700 focus:outline-none focus:ring-4 focus:ring-[#ff6a00]/20 transition shadow-sm hover:shadow-md"
             value={tourPlace}
             onChange={(e) => setTourPlace(e.target.value)}
@@ -537,6 +579,12 @@ export function AdvancedTravelSearchBar({
         }
         .bk-date__calendar .react-datepicker__day:hover { background: #fff7ed; }
       `}</style>
+
+      <datalist id="bk-tour-places">
+        {filteredTourPlaceOptions.map((p) => (
+          <option key={p} value={p} />
+        ))}
+      </datalist>
     </div>
   );
 }
