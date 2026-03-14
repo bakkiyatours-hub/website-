@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router';
 import { MapPin, Clock, Star, SlidersHorizontal } from 'lucide-react';
+import breadcumbsVideo from '../../assets/breadcumbsvideo.mp4';
 
 const tajMahalImage =
   'https://images.unsplash.com/photo-1623811852177-611cda0b372f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxiZWF1dGlmdWwlMjB0YWolMjBtYWhhbCUyMGluZGlhJTIwdHJhdmVsfGVufDF8fHx8MTc3MjQ1OTg0NHww&ixlib=rb-4.1.0&q=80&w=1080';
@@ -166,11 +167,8 @@ export function Packages() {
       <section className="bg-gradient-to-r from-purple-900 to-blue-900 text-white py-16 relative overflow-hidden">
         {/* Background Video */}
         <div className="absolute inset-0 opacity-30">
-          <video autoPlay loop muted playsInline className="w-full h-full object-cover">
-            <source
-              src="https://assets.mixkit.co/videos/preview/mixkit-aerial-view-of-a-temple-in-a-forest-50575-large.mp4"
-              type="video/mp4"
-            />
+          <video autoPlay loop muted playsInline preload="metadata" className="w-full h-full object-cover">
+            <source src={breadcumbsVideo} type="video/mp4" />
           </video>
         </div>
 
