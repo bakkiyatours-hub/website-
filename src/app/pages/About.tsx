@@ -16,7 +16,7 @@ export function About() {
           <div className="absolute inset-0 bg-gradient-to-r from-purple-900/80 to-blue-900/80"></div>
         </div>
         <div className="relative z-10 text-center text-white px-4">
-          <h1 className="text-5xl mb-4">About Bakiya Tours</h1>
+          <h1 className="text-5xl mb-4">About Bakkiya Tours & Travels</h1>
           <p className="text-xl">Your Trusted Travel Partner Since 2010</p>
         </div>
       </section>
@@ -28,7 +28,7 @@ export function About() {
             <div>
               <h2 className="text-4xl mb-6">Who We Are</h2>
               <p className="text-lg text-gray-600 mb-4">
-                Bakiya Tours is a premier travel company specializing in creating unforgettable
+                Bakkiya Tours & Travels is a premier travel company specializing in creating unforgettable
                 travel experiences across India, Sri Lanka, and international destinations including
                 Singapore, Malaysia, UAE, and Thailand.
               </p>

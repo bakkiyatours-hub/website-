@@ -1,5 +1,5 @@
 Perfect 👍
-Here is your **complete professional MULTI-PAGE website development prompt** for Bakkiya Tours.
+Here is your **complete professional MULTI-PAGE website development prompt** for Bakkiya Tours & Travels.
 
 You can give this to:
 
@@ -14,13 +14,13 @@ This is structured clearly for a **multi-page scalable platform**.
 
 # 🚀 MASTER MULTI-PAGE WEBSITE DEVELOPMENT PROMPT
 
-## Project: Bakkiya Tours – Premium Travel Platform
+## Project: Bakkiya Tours & Travels – Premium Travel Platform
 
 ---
 
 # 🏢 COMPANY OVERVIEW
 
-Develop a modern, premium, multi-page travel website for **Bakkiya Tours**, a global travel company specializing in:
+Develop a modern, premium, multi-page travel website for **Bakkiya Tours & Travels**, a global travel company specializing in:
 
 - Inbound Tourism (India & Sri Lanka)
 - Outbound Tourism (Singapore, Malaysia, UAE, Thailand)

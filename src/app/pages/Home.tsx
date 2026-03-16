@@ -61,7 +61,7 @@ export function Home() {
         </div>
 
         <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto" data-reveal>
-          <h1 className="text-5xl md:text-6xl mb-4">Explore the World with Bakiya Tours</h1>
+          <h1 className="text-5xl md:text-6xl mb-4">Explore the World with Bakkiya Tours & Travels</h1>
           <p className="text-xl md:text-2xl mb-8">
             Premium Travel Experiences Across India, Sri Lanka & Beyond
           </p>
@@ -231,7 +231,7 @@ export function Home() {
       <section className="py-16 bg-gradient-to-r from-purple-900 to-blue-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-4xl mb-4">Why Choose Bakiya Tours</h2>
+            <h2 className="text-4xl mb-4">Why Choose Bakkiya Tours & Travels</h2>
             <p className="text-xl text-purple-200">Your trusted travel partner since 2010</p>
           </div>
 
@@ -398,7 +398,7 @@ export function Home() {
                 name: 'John Smith',
                 location: 'Singapore',
                 review:
-                  'Amazing experience! The tour was well organized and our guide was extremely knowledgeable. Highly recommend Bakiya Tours!',
+                  'Amazing experience! The tour was well organized and our guide was extremely knowledgeable. Highly recommend Bakkiya Tours & Travels!',
               },
               {
                 name: 'Meera Patel',

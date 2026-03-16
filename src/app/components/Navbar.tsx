@@ -13,8 +13,8 @@ export function Navbar() {
     <nav className="bk-navbar">
       <div className="bk-navbar__container">
         <div className="bk-navbar__header">
-          <Link to="/" className="bk-navbar__brand" aria-label="Bakiya Tours Home">
-            <img src={logoImage} alt="Bakiya Tours" className="bk-navbar__logo" />
+          <Link to="/" className="bk-navbar__brand" aria-label="Bakkiya Tours & Travels Home">
+            <img src={logoImage} alt="Bakkiya Tours & Travels" className="bk-navbar__logo" />
           </Link>
 
           <div className="bk-navbar__desktop-nav">

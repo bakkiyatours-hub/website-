@@ -11,11 +11,11 @@ export function Footer() {
           <div>
             <img
               src={logoImage}
-              alt="Bakiya Tours"
+              alt="Bakkiya Tours & Travels"
               className="h-20 w-45"
               loading="lazy"
             />
-            <h2 className="text-3xl mb-4 text-white font-bold">Bakiya Tours</h2>
+            <h2 className="text-3xl mb-4 text-white font-bold">Bakkiya Tours & Travels</h2>
             <p className="text-purple-200 mb-4">
               Your trusted partner for unforgettable travel experiences across India, Sri Lanka, and
               international destinations.
@@ -118,7 +118,7 @@ export function Footer() {
         </div>
 
         <div className="border-t border-purple-700 mt-8 pt-8 text-center text-purple-200">
-          <p>&copy; {new Date().getFullYear()} Bakiya Tours. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Bakkiya Tours & Travels. All rights reserved.</p>
         </div>
       </div>
     </footer>
