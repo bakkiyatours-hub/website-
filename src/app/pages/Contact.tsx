@@ -69,8 +69,7 @@ export function Contact() {
                   </div>
                   <div>
                     <h3 className="text-lg mb-1">Email</h3>
-                    <p className="text-gray-600">info@bakiyatours.com</p>
-                    <p className="text-gray-600">bookings@bakiyatours.com</p>
+                    <p className="text-gray-600">bakkiyatours@gmail.com</p>
                   </div>
                 </div>
 
@@ -188,7 +187,7 @@ export function Contact() {
             </a>
 
             <a
-              href="mailto:info@bakiyatours.com"
+              href="mailto:bakkiyatours@gmail.com"
               className="bg-gradient-to-br from-orange-500 to-orange-600 text-white p-8 rounded-2xl text-center hover:shadow-2xl transition"
             >
               <Mail className="w-12 h-12 mx-auto mb-4" />

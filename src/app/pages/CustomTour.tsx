@@ -318,7 +318,7 @@ export function CustomTour() {
             <div>
               <Mail className="w-12 h-12 mx-auto mb-4" />
               <h3 className="text-xl mb-2">Email Us</h3>
-              <p className="text-purple-100">info@bakiyatours.com</p>
+              <p className="text-purple-100">bakkiyatours@gmail.com</p>
             </div>
             <div>
               <MapPin className="w-12 h-12 mx-auto mb-4" />
